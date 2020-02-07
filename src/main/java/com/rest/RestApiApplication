@@ -1,0 +1,19 @@
+package com.rest;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
+@SpringBootApplication(scanBasePackages={
+		"com.bo","com.service","com.vo","com.controller"})
+@EnableMongoRepositories ("com.dao") // this fix the problem
+/*@ComponentScan(basePackages={"com.controller"})*/
+/*@ComponentScan(basePackages={"com.dao","com.bo","com.service","com.vo","com.controller"})*/
+public class RestApiApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(RestApiApplication.class, args);
+	}
+
+}
